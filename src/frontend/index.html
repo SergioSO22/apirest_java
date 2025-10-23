@@ -1,0 +1,54 @@
+<!-- frontend/index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Personas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestión de Personas</h1>
+        
+        <!-- Formulario para agregar/editar -->
+        <div class="form-section">
+            <h2 id="form-title">Agregar Nueva Persona</h2>
+            <form id="persona-form">
+                <input type="hidden" id="persona-id">
+                <div class="form-group">
+                    <input type="text" id="nombre" placeholder="Nombre" required>
+                    <input type="text" id="apellido" placeholder="Apellido" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Email">
+                    <input type="tel" id="telefono" placeholder="Teléfono">
+                </div>
+                <div class="form-group">
+                    <input type="number" id="edad" placeholder="Edad" min="0">
+                    <input type="text" id="direccion" placeholder="Dirección">
+                </div>
+                <div class="form-actions">
+                    <button type="submit" id="submit-btn">Guardar</button>
+                    <button type="button" id="cancel-btn" style="display: none;">Cancelar</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Búsqueda -->
+        <div class="search-section">
+            <input type="text" id="search-input" placeholder="Buscar por nombre o apellido...">
+            <button onclick="searchPersonas()">Buscar</button>
+            <button onclick="clearSearch()">Limpiar</button>
+        </div>
+
+        <!-- Lista de personas -->
+        <div class="list-section">
+            <h2>Lista de Personas</h2>
+            <div id="personas-list"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
